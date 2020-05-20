@@ -3,7 +3,7 @@
 import os
 import sys
 
-# --git
+# --git2
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'volunteer.settings')
     try:
