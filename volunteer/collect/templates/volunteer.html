@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>봉사활동 모아서 알려주는 사이트</p>
+    <br>
+    <ul>
+        {% for volunteer in volunteer_list %}
+            <li>{{volunteer.name}} {{volunteer.detail}}</li>
+            <br>
+        {% endfor %}
+            </ul>
+</body>
+</html>

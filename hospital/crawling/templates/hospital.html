@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> 선별 진료소를 알려주는 사이트입니다</p>
+    <br>
+    <ul>
+    {% for hospital in hospital_list %}
+        <li>{{hospital.region}} {{hospital.local}} {{hospital.name}} {{hospital.type}} {{hospital.number}}</li>
+        <br>
+    {% endfor %}
+        </ul>
+</body>
+</html>
