@@ -10,7 +10,12 @@
     <br>
     <ul>
         {% for volunteer in volunteer_list %}
-            <li>{{volunteer.name}} {{volunteer.detail}}</li>
+            <h1>{{volunteer.timeApprove}}</h1>
+            <h5>{{volunteer.ing}}</h5>
+            <h2>{{volunteer.title}}</h2>
+            <h4>{{volunteer.institution}}</h4>
+            <h6>{{volunteer.apply_period}}</h6>
+            <h6>{{volunteer.volunteer_period}}</h6>
             <br>
         {% endfor %}
             </ul>
