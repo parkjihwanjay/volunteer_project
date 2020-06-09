@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    {% if error %}
+        {{error}}
+    {% endif %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <!-- 아이디 -->
+        <input type="text" name="username" placeholder="아이디">
+        <!-- 비밀번호 -->
+        <input type="password" name="password" placeholder="비밀번호">
+        <!-- 가입하기 버튼 -->
+        <button type="submit">가입하기</button>
+    </form>
+</body>
+</html>
