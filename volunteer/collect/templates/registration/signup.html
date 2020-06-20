@@ -1,23 +1,49 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/register.css' %}">
+    <link rel="shortcut icon" href="{% static '/img/volunteer.png' %}">
+    <title>다모아 봉사</title>
 </head>
-<body>
-    <h1>회원가입</h1>
-    {% if error %}
-        {{error}}
-    {% endif %}
-    <form action="" method="POST">
-        {% csrf_token %}
-        <!-- 아이디 -->
-        <input type="text" name="username" placeholder="아이디">
-        <!-- 비밀번호 -->
-        <input type="password" name="password" placeholder="비밀번호">
-        <!-- 가입하기 버튼 -->
-        <button type="submit">가입하기</button>
-    </form>
+<body style="margin : 0; margin-top : 27px; ">
+    <div class="registration">
+    <div id="side">
+    <h3 id="사이트">다모아 봉사</h3>
+    {% comment %} <h3 id="가입">회원가입</h3> {% endcomment %}
+    <img id="volunteer" src="{% static '/img/volunteer.png' %}"> 
+    <img id="help" src="{% static '/img/help.png' %}">
+    <a href="{% url 'home' %}"><p id="lang">홈</p></a>
+    <a href="{% url 'login' %}"><p id="login">로그인</p></a>
+    <!-- <p id="login">카카오 로그인</p> -->
+    </div>
+    <br><br><br>
+    {% comment %} <a href="{% url 'signup' %}">회원가입</a> {% endcomment %}
+    <div id="main"> 
+    <h3 id="가입">회원가입</h3>
+    <img id="register" src="{% static '/img/register.png' %}">
+    <div style="width:180px; margin: 0 auto;">
+        <form action="" method="POST"> {% csrf_token %}
+            <p id="e">이메일</p>
+            <input type="text" id="이메일" name="email" placeholder="이메일" >
+            <p id="i">아이디</p>
+            <input type="text" id="아이디" name="username" placeholder="아이디">
+            <p id="p">비밀번호</p>
+            <input type="password" id="비밀번호" name="password" placeholder="비밀번호">
+            <p id="welcome">어서 와요!</p>
+            {% if error %}
+                <p style="font-size:8px; color: red; text-align: center; margin-top:0;">{{error}}</p>
+            {% endif %}
+            <button id="버튼" type="submit">가입하기</button>
+            <img id="hello" src="{% static '/img/hello.png' %}">
+        </form>
+    </div>
+    </div>
+    <footer style="text-align: center; margin-top: 15px;">
+        Developed by 우성, 호석, 지환
+    </footer>
+    </div>
 </body>
 </html>

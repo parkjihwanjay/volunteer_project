@@ -1,0 +1,20 @@
+.modal{
+    width: 70%;
+    height: 200px;
+    margin: 0 auto;
+    position: fixed;
+    top:35%;
+    left: 16%;
+    background-color: gray;
+    opacity: 30;
+}
+.modal p{
+    text-align: center;
+    margin-top:60px;
+}
+.modal button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 55px;
+
+}

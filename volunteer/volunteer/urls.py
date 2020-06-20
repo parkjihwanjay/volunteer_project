@@ -24,4 +24,5 @@ urlpatterns = [
     path('registration/logout', views.logout, name="logout"),
     path('', views.home, name="home"),
     path('accounts/', include('allauth.urls')),
+    path('detail/<int:page_num>/', views.detail, name="detail"),
 ]

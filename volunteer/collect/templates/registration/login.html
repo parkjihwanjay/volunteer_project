@@ -1,20 +1,87 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/login디자인.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/register.css' %}">
+    <link rel="shortcut icon" href="{% static '/img/volunteer.png' %}">
+    <title>다모아 봉사</title>
 </head>
 <body>
-    <h1>로그인</h1>
-    {% if error %}
-        {{error}}
+    <div id="side">
+        <h3 id="사이트">다모아 봉사</h3>
+        <!-- <h3 id="가입">회원가입</h3> -->
+        <!-- <img id="register" src="{% static '/img/register.png' %}"> -->
+        
+    </div>
+    {% if user.is_authenticated %}
+    <!-- 로그인 이후 -->
+    <!-- <div>안녕하세요, {{user.username}}님</div>
+    <a href="{% url 'logout' %}">로그아웃</a> -->
+    <!-- <a class="volunteer_button" href="{% url 'volunteer' %}">봉사활동 보기</a> -->
+    
+    <img id="volunteer" src="{% static '/img/volunteer.png' %}"> 
+    <img id="help" src="{% static '/img/help.png' %}">
+    <div><p id="lang">안녕하세요, {{user.username}}님</p></div>
+    <a href="{% url 'home' %}"><p id="login">홈</p></a>
+    <a href="{% url 'logout' %}"><p id="regi">로그아웃</p></a>
+
+    {% else %}
+    <!-- 로그인 이전 --> 
+    <img id="volunteer" src="{% static '/img/volunteer.png' %}"> 
+    <img id="help" src="{% static '/img/help.png' %}">
+    <a href="{% url 'home' %}"><p id="lang">홈</p></a>
+    <a href="{% url 'login' %}"><p id="login">로그인</p></a>
+    <!-- <p id="login">카카오 로그인</p> -->
+    <a href="{% url 'signup' %}"><p id="regi">회원가입</p></a>
+    <!-- <img style="display: block; margin: 0 auto; margin-top: 90px; width: 65%; max-width: 643px; max-height: 380px;" src="https://lh3.googleusercontent.com/proxy/v5toiFIl0wL7tZCILt76ouNQ5kDa9GSET2s86tAlkpbXpWW0clOkU39MGR6BdP4KMKqMHKfUWqp_Y1msRxKWK0D-6ooQ-7LNxqvCC7BIIFc9GJ5VW-jri4HDT1zk7nRKpqxVyAzfHqhweqcSL3KqPNd7NQ" alt="">
+    <p style="text-align: center; margin-top: 50px;">다모아 봉사는 봉사활동 사이트들에서 봉사활동 정보를 종합하여 보기 좋게 보여주는 서비스입니다. </p> -->
     {% endif %}
-    <form action="" method="POST">
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="아이디">
-        <input type="password" name="password" placeholder="비밀번호">
-        <button type="submit">로그인</button>
-    </form> 
+
+    <div class="text4">
+        <h1>오신것을 환영합니다 </h1>
+    </div>
+    <div class="box1">
+        <div class="text1">
+            <h4 style="text-align:center;">로그인</h4>
+        </div>
+        <form action="" method="POST"> {% csrf_token %}
+            <div class="text2">
+                <h2>아이디 : </h2>
+            </div>
+            <input name="username" type="text" placeholder="아이디">
+            <!-- {% comment %} <div class="box2"></div> {% endcomment %} -->
+            <div class="text3">
+                <h2>비밀번호 : </h2>
+            </div>
+            <input name="password" type="password" placeholder="비밀번호">
+            {% if error %}
+            <p style="font-size:14px; color: red; text-align: center; margin-top:36px;">{{error}}</p>
+            {% endif %}
+            <button>로그인 하기</button>
+        </form>
+        <!-- <div class="box3"></div> -->
+    </div>
+
+    <div class="img1">
+        <img style="width:100%; height:300px; max-width:858px; margin:0 auto; display:block;" src="{% static '/img/first.jpg' %}">
+    </div>
+    <footer style="text-align: center; margin-top: 49px; width: 100%; display: block;">
+        Developed by 우성, 호석, 지환
+      </footer>
+    <!-- <div class="text5">
+        <h3>VOLUNTEER</h3>
+    </div>
+
+    <div class="text6">
+        <h5>회원가입</h5>
+    </div>
+
+    <div class="text7">
+        <h5>아이디/비밀번호를 잊으셨나요</h5>
+    </div> -->
+
 </body>
 </html>

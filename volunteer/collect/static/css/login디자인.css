@@ -1,0 +1,78 @@
+.box1{
+    height: 500px;
+    border: solid 1px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 88px;
+}
+
+.box2{
+    height: 60px;
+    border: solid 1px;
+    width: 450px;
+    margin: 0 auto;
+    /* margin-top: -350px; */
+}
+
+.box3{
+    height: 60px;
+    border: solid 1px;
+    width: 450px;
+    margin: 0 auto;
+    /* margin-top: 100px; */
+}
+
+.text1{
+    /* margin-top: -350px;
+    margin-left: 910px; */
+    font-size: 200%;
+}
+
+.text2{
+    /* margin-top: 53px;
+    margin-left: 750px; */
+}
+
+.text3{
+    /* margin-left: 750px;
+    margin-top: 130px; */
+}
+input{
+    height: 30px;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+h2{
+    padding-left: 10px;
+}
+button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-size: 20px;
+}
+.text4{
+    /* margin-top: -600px;
+    margin-left: 680px; */
+    font-size: 200%;
+    text-align: center;
+}
+
+.img1{
+    margin-top: 100px;
+}
+
+.text5{
+    /* margin-top: -950px; */
+}
+
+.text6{
+    /* margin-top: 520px;
+    margin-left: 1100px; */
+}
+
+.text7{
+    /* margin-left: 700px;
+    margin-top: -40px; */
+}

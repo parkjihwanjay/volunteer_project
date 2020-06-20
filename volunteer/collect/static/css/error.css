@@ -1,0 +1,76 @@
+#사이트{
+    font-size: 20px;
+    position : absolute;
+    left : 15px;
+}
+
+#가입{
+    font-size: 20px;
+    position : absolute;
+    left : 585px;
+    top : 100px;
+}
+
+#help{
+    position : absolute;
+    left : 600px;
+    top : 15px;
+    width : 50px;
+    height : 50px;
+}
+
+#volunteer{
+    position : absolute;
+    left : 140px;
+    top : 20px;
+    width : 40px;
+    height : 40px;
+}
+
+#error{
+    font-size : 15px;
+    position : absolute;
+    left : 510px;
+    top : 325px;
+}
+
+#main{
+    height : 600px;
+    background: rgba(252, 230, 198, 0.671);
+}
+
+#sad{
+    width : 40px;
+    height : 40px;
+    position : absolute;
+    left : 460px;
+    top : 330px;
+}
+
+#register{
+    position : absolute;
+    left : 610px;
+    top : 175px;
+    width : 40px;
+    height : 40px;
+}
+
+#lang{
+    font-size : 10px;
+    position : absolute;
+    right : 200px;
+    top : 25px;
+}
+
+#login{
+    font-size : 10px;
+    position : absolute;
+    right : 125px;
+    top : 25px;
+}
+#regi{
+    font-size : 10px;
+    position : absolute;
+    right : 50px;
+    top : 25px;
+}

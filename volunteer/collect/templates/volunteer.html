@@ -1,23 +1,66 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="{% static '/img/volunteer.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/register.css' %}">
+    <title>다모아 봉사</title>
 </head>
 <body>
-    <p>봉사활동 모아서 알려주는 사이트</p>
+    <div id="side">
+        <h3 id="사이트">다모아 봉사</h3>
+        <!-- <h3 id="가입">회원가입</h3> -->
+        <!-- <img id="register" src="{% static '/img/register.png' %}"> -->
+    </div>
+    {% if user.is_authenticated %}
+    <!-- 로그인 이후 -->
+    <!-- <div>안녕하세요, {{user.username}}님</div>
+    <a href="{% url 'logout' %}">로그아웃</a> -->
+    <!-- <a class="volunteer_button" href="{% url 'volunteer' %}">봉사활동 보기</a> -->
+    
+    <img id="volunteer" src="{% static '/img/volunteer.png' %}"> 
+    <img id="help" src="{% static '/img/help.png' %}">
+    <div><p id="lang">안녕하세요, {{user.username}}님</p></div>
+    <a href="{% url 'home' %}"><p id="login">홈</p></a>
+    <a href="{% url 'logout' %}"><p id="regi">로그아웃</p></a>
+
+    {% else %}
+    <!-- 로그인 이전 --> 
+    <img id="volunteer" src="{% static '/img/volunteer.png' %}"> 
+    <img id="help" src="{% static '/img/help.png' %}">
+    <a href="{% url 'home' %}"><p id="lang">홈</p></a>
+    <a href="{% url 'login' %}"><p id="login">로그인</p></a>
+    <!-- <p id="login">카카오 로그인</p> -->
+    <a href="{% url 'signup' %}"><p id="regi">회원가입</p></a>
+    <!-- <img style="display: block; margin: 0 auto; margin-top: 90px; width: 65%; max-width: 643px; max-height: 380px;" src="https://lh3.googleusercontent.com/proxy/v5toiFIl0wL7tZCILt76ouNQ5kDa9GSET2s86tAlkpbXpWW0clOkU39MGR6BdP4KMKqMHKfUWqp_Y1msRxKWK0D-6ooQ-7LNxqvCC7BIIFc9GJ5VW-jri4HDT1zk7nRKpqxVyAzfHqhweqcSL3KqPNd7NQ" alt="">
+    <p style="text-align: center; margin-top: 50px;">다모아 봉사는 봉사활동 사이트들에서 봉사활동 정보를 종합하여 보기 좋게 보여주는 서비스입니다. </p> -->
+    {% endif %}
+    {% comment %} <p>봉사활동 모아서 알려주는 사이트</p> {% endcomment %}
     <br>
-    <ul>
+    {% if error%}
+        <p style="text-align: center; margin-top: 277px;">{{error}}</p>
+    {% else %}
+    <ul style="margin-top:140px;">
         {% for volunteer in volunteer_list %}
-            <h1>{{volunteer.timeApprove}}</h1>
-            <h5>{{volunteer.ing}}</h5>
-            <h2>{{volunteer.title}}</h2>
-            <h4>{{volunteer.institution}}</h4>
-            <h6>{{volunteer.apply_period}}</h6>
-            <h6>{{volunteer.volunteer_period}}</h6>
-            <br>
+            <div class="list">
+                <!-- <a href="{% url 'detail' volunteer.page_num %}">
+                    <h2>{{volunteer.title}}</h2>
+                </a> -->
+                <a href="{{volunteer.next_page}}">
+                    <h2>{{volunteer.title}}</h2>
+                </a>
+                <h3>{{volunteer.timeApprove}}</h1>
+                <h4>{{volunteer.ing}}</h5>
+                <h4>{{volunteer.institution}}</h4>
+                <h5>지원기간 : {{volunteer.apply_period}}</h6>
+                <h5>봉사기간 : {{volunteer.volunteer_period}}</h6>
+                <h3 style="color: red;">{{volunteer.close_day}}</h3>
+                <br>
+            </div>
         {% endfor %}
             </ul>
+    {% endif %}
 </body>
 </html>

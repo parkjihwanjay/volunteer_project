@@ -1,3 +1,4 @@
+{% load static %}
 {% load socialaccount %}
 {% providers_media_js %}
 <!DOCTYPE html>
@@ -5,33 +6,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="{% static '/img/volunteer.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/spinner.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/register.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/modal.css' %}">
+    <title>다모아 봉사</title>
 </head>
-<body>
-    <h1>Home</h1>
+<body style="margin-top: 27px;">
+    <div id="side">
+      <h3 id="사이트">다모아 봉사</h3>
+      <!-- <h3 id="가입">회원가입</h3> -->
+      <!-- <img id="register" src="{% static '/img/register.png' %}"> -->
+      
+    </div>
     {% if user.is_authenticated %}
     <!-- 로그인 이후 -->
-    <div>안녕하세요, {{user.username}}님</div>
-    <a href="{% url 'logout' %}">로그아웃</a>
-    {% else %}
-    <!-- 로그인 이전 -->
-    <a href="{% url 'signup' %}">회원가입</a>
-    <a href="{% url 'login' %}">로그인</a>
-    <a href="{% provider_login_url 'kakao' %}">카카오 로그인</a>
-    {% endif %}
+    <!-- <div>안녕하세요, {{user.username}}님</div>
+    <a href="{% url 'logout' %}">로그아웃</a> -->
+    <!-- <a class="volunteer_button" href="{% url 'volunteer' %}">봉사활동 보기</a> -->
     
+    <img id="volunteer" src="{% static '/img/volunteer.png' %}"> 
+    <img id="help" src="{% static '/img/help.png' %}">
+    <div><p id="lang">안녕하세요, {{user.username}}님</p></div>
+    <a href="{% url 'home' %}"><p id="login">홈</p></a>
+    <a href="{% url 'logout' %}"><p id="regi">로그아웃</p></a>
+    <div style="width: 368px; margin: 0 auto; margin-top: 123px;">
+      <form action="{% url 'volunteer' %}" method="POST"> {% csrf_token %}
+      <select name="region" id="region" style="font-size: 16px; width: 78px; height: 25px; margin-left: 15px; padding-left: 16px;">
+        <option value="" disabled selected>지역</option>
+        <option value="6110000">서울</option>
+        <option value="6260000">부산</option>
+        <option value="6270000">대구</option>
+        <option value="6280000">인천</option>
+        <option value="6290000">광주</option>
+        <option value="6300000">대전</option>
+      </select>
+      <select name="category" id="region" style="height: 25px; font-size: 16px; margin-left: 15px; padding-left: 16px;">
+        <option value="" disabled selected>분야</option>
+        <!-- <option value="">전체</option> -->
+        <option value="0100">생활편의지원</option>
+        <option value="0200">주거환경</option>
+        <option value="0300">상담</option>
+        <option value="0400">교육</option>
+        <option value="0500">보건의료</option>
+      </select>
+      <select name="clients" id="region" style="height: 25px; font-size: 16px; margin-left: 15px; padding-left: 16px;">
+        <option value="" disabled selected>봉사 대상</option>
+        <option value="1">아동*청소년</option>
+        <option value="2">장애인</option>
+        <option value="3">노인</option>
+        <option value="4">쪽방촌</option>
+        <option value="5">다문화가정</option>
+        <option value="6">여성</option>
+      </select>
+    </div>
+      <img style="display: block; margin: 0 auto; margin-top: 112px; width: 27%; max-width: 284px;" src="https://www.1365.go.kr/web/vols/images/common/logo.png" alt="">
+      <button class="volunteer_button" style="display: block; margin: 0 auto; margin-top: 23px;">
+        봉사활동 보기</button> 
+      <!-- <input type="button" class="volunteer_button" value="봉사활동 보기"> -->
+    </form>
+
+    <!-- <form action="" method="GET"> -->
+      <img style="display: block; margin: 0 auto; margin-top: 99px; width: 27%; max-width: 284px;" src="https://www.vms.or.kr/img/logo.png" alt="">  
+      <button class="button_modal" style="display: block; margin: 0 auto; margin-top: 23px;">
+        봉사활동 보기</button>
+    <!-- </form> -->
+
+      <img style="display: block; margin: 0 auto; margin-top: 99px; width: 27%; max-width: 284px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR6inpeagypxJ6YhmTKomQcJAez8l1W8fcXzEseH8f0jocVt4On&usqp=CAU" alt="">  
+      <button class="button_modal" style="display: block; margin: 0 auto; margin-top: 23px;">
+        봉사활동 보기</button>
+    <!-- <a href="{% url 'home' %}"><p id="lang">홈</p></a>
+    <a href="{% url 'login' %}"><p id="login">로그인</p></a> -->
+    {% else %}
+    <!-- 로그인 이전 --> 
+    <img id="volunteer" src="{% static '/img/volunteer.png' %}"> 
+    <img id="help" src="{% static '/img/help.png' %}">
+    <a href="{% url 'home' %}"><p id="lang">홈</p></a>
+    <a href="{% url 'login' %}"><p id="login">로그인</p></a>
+    <!-- <p id="login">카카오 로그인</p> -->
+    <a href="{% url 'signup' %}"><p id="regi">회원가입</p></a>
+    <img style="display: block; margin: 0 auto; margin-top: 90px; width: 65%; max-width: 643px; max-height: 380px;" src="https://lh3.googleusercontent.com/proxy/v5toiFIl0wL7tZCILt76ouNQ5kDa9GSET2s86tAlkpbXpWW0clOkU39MGR6BdP4KMKqMHKfUWqp_Y1msRxKWK0D-6ooQ-7LNxqvCC7BIIFc9GJ5VW-jri4HDT1zk7nRKpqxVyAzfHqhweqcSL3KqPNd7NQ" alt="">
+    <p style="text-align: center; margin-top: 50px;">다모아 봉사는 봉사활동 사이트들에서 봉사활동 정보를 종합하여 보기 좋게 보여주는 서비스입니다. </p>
+    <!-- <a href="{% provider_login_url 'kakao' %}">카카오 로그인</a> --> 
+    {% endif %}
+    <footer style="text-align: center; margin-top: 49px; width: 100%; display: block;">
+      Developed by 우성, 호석, 지환
+    </footer>
+
+    <div class="modal" style="display: none;">
+      <p>아직 준비중입니다 ㅜㅜ</p>
+      <button class="close-button">X</button>
+    </div>
+
+    <div class="loader" style="display: none;"></div>
+    <script type="text/javascript">
+        // document.querySelector(".loader").style.display = "none";
+        window.onload = function() {
+            document.querySelector(".volunteer_button").onclick = function() {
+                document.querySelector(".loader").style.display = "flex";
+                document.querySelector(".loader").style.removeProperty('display');
+            };
+            const button_modals = document.querySelectorAll(".button_modal");
+            button_modals.forEach(button => {
+              button.onclick = function() {
+                  document.querySelector(".modal").style.removeProperty('display');
+              };
+            })
+            document.querySelector(".close-button").onclick = function() {
+              document.querySelector(".modal").style.display = "none";
+            };
+        };
+    </script>
+    <!-- <script src="{% static '/js/spinner.js' %}"></script> -->
 </body>
 </html>
-
-카카오
-구글
-페이스북
-.. 소셜 로그인
-
-과제
-
-* 구글, 페이스북등 소셜 로그인 하나 구현하는거에요
-* 구글, 페이스북 로그인 구현해오기
-
-셤 끝나는대로 구현해오고
-저희 프로젝트 css랑 구조 짜기

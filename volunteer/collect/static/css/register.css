@@ -1,0 +1,178 @@
+button{
+    font-size: 18px;
+}
+
+.registration{
+    flex-direction: column;
+}
+a{
+    color: black;
+}
+.list > h1,h2,h3,h4,h5,h6{
+    text-align: center;
+}
+.list a{
+    text-decoration: none;
+}
+.list a:link{
+    color: #900c3f;
+    opacity: 0.3;
+}
+.list a:visited{
+    color: skyblue;
+    opacity: 0.3;
+}
+.list a:hover{
+    color: black;
+}
+
+#사이트{
+    font-size: 20px;
+    position : absolute;
+    left : 15px;
+}
+
+#가입{
+    font-size: 20px;
+    text-align: center;
+    margin-top:5px;
+    /* margin: 0 auto; */
+    /* position : absolute;
+    left : 50%;
+    top : 100px; */
+}
+
+#lang{
+    font-size : 16px;
+    position : absolute;
+    right : 200px;
+    top : 50px;
+    opacity: 0.5;
+}
+#login{
+    font-size : 16px;
+    position : absolute;
+    right : 125px;
+    top : 50px;
+    opacity: 0.5;
+}
+
+#regi{
+    font-size : 16px;
+    position : absolute;
+    right : 50px;
+    top : 50px;
+    opacity: 0.5;
+}
+#help{
+    /* position : absolute;
+    left : 600px;
+    top : 15px; */
+    display: block;
+    margin: 0 auto;
+    width : 80px;
+    height : 80px;
+}
+
+#volunteer{
+    position : absolute;
+    left : 140px;
+    top : 37px;
+    width : 71px; 
+    height : 71px;
+}
+
+#register{
+    /* position : absolute;
+    left : 610px;
+    top : 175px; */
+    width : 40px;
+    height : 40px;
+    display: block;
+    margin: 0 auto;
+}
+
+#hello{
+    /* position : absolute; */
+    width : 70px;
+    height : 70px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    /* left : 515px; */
+    /* top :450px; */
+}
+#main{
+    height : 500px;
+    background: rgba(252, 230, 198, 0.671);
+    padding-top: 10px;
+    padding-bottom: 45px;
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+#이메일{
+    /* position : absolute;
+    left : 545px;
+    top : 260px; */
+}
+
+#아이디{
+    /* position : absolute;
+    left : 545px;
+    top : 310px; */
+}
+
+#비밀번호{
+    /* position : absolute;
+    left : 545px;
+    top : 360px; */
+}
+
+#버튼{
+    /* position : absolute;
+    left : 575px;
+    top : 450px; */
+    block-size: 50px;
+    width : 100px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 12px;
+}
+
+#i{
+    /* position : absolute;
+    left : 475px;
+    top : 295px; */
+    font-size : 15px;
+    text-align: center;
+}
+#main input{
+    width: 100%;
+}
+
+#p{
+    /* position : absolute;
+    left : 470px;
+    top : 345px; */
+    font-size : 15px;
+    text-align: center;
+
+}
+
+#e{
+    /* position : absolute;
+    left : 475px;
+    top : 245px; */
+    font-size : 15px;
+    text-align: center;
+}
+
+#welcome{
+    /* position : absolute; */
+    font-size : 22px;
+    text-align: center;
+    /* left : 515px; */
+    /* top : 485px; */
+}
+
